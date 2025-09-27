@@ -1,1 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: blue;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 15px;
+    color: #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+
+    background-color: #f4f4f4; /* gris claro */
+    padding: 15px;
+    border-radius: 10px;
+}
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #000;
+}
+
+.menu li a span.count {
+    font-size: 12px;
+    color: #777;
+    margin-left: 4px;
+}
+
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 20px;
+}
+
+h1 {
+    font-size: 42px;
+    font-style: italic;
+    font-weight: 800;
+    color: #000;
+}
+
+
+.grid {
+    display: grid;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+main {
+    background-color: #fff; /* blanco */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.main-article {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 750px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #007bff; /* azul */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+
+/*Parte de las cards*/
+/*  Móvil primero (default)
+   Cards en 1 columna
+*/
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 columna por defecto */
+  gap: 25px;
+  margin: 50px 0 30px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px; /* antes 10px */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* un poco más visible */
+  padding: 15px;
+}
+
+
+.card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card__text {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.card__button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card__button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+/* 📱 Tablet (≥768px) */
+@media (min-width: 768px) {
+  /* Cards en 2 columnas */
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 💻 Escritorio (≥1024px) */
+@media (min-width: 1024px) {
+  /* Main en 2 columnas (texto izq - imagen der) */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .main-article {
+    height: auto; /* que se adapte en escritorio */
+  }
+
+  .main-image {
+    height: auto;
+    max-height: 500px; /* opcional para que no se deforme */
+  }
+
+  /* Cards en 3 columnas */
+  .cards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
